@@ -1,0 +1,17 @@
+syntax = "proto3";
+package cosmos_chain.cosmoschain;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "cosmoschain/cosmoschain/params.proto";
+
+option go_package = "github.com/Bakhtiyor7/cosmos_chain/x/cosmoschain/types";
+
+// GenesisState defines the cosmoschain module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
